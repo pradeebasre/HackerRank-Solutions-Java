@@ -1,0 +1,44 @@
+1)Java Output Formatting:
+
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("================================");
+        
+        for (int i = 0; i < 3; i++) {
+            String s1 = sc.next();
+            int x = sc.nextInt();
+            
+            // %-15s  -> Left-justified String in a 15-character field
+            // %03d   -> 3-digit integer, padded with leading zeros
+            // %n     -> Platform-independent line separator (newline)
+            System.out.printf("%-15s%03d%n", s1, x);
+        }
+        
+        System.out.println("================================");
+    }
+}
+
+2)Java End-of-file:
+
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int lineNumber = 1;
+
+        // Loop runs as long as there is another line of input available
+        while (scanner.hasNext()) {
+            String line = scanner.nextLine();
+            System.out.println(lineNumber + " " + line);
+            lineNumber++;
+        }
+
+        scanner.close();
+    }
+}
